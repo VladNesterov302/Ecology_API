@@ -83,6 +83,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\DocumentDTO.cs" />
+    <Compile Include="Models\Air\AzotDb.cs" />
+    <Compile Include="Models\Air\OzonDb.cs" />
+    <Compile Include="Models\Air\PmDb.cs" />
+    <Compile Include="Models\Air\SeraDb.cs" />
+    <Compile Include="Models\Location\CityDb.cs" />
+    <Compile Include="Models\Location\WaterObjectDb.cs" />
+    <Compile Include="Models\Radiation\RadiationDb.cs" />
     <Compile Include="Models\Users\RoleDb.cs" />
     <Compile Include="Models\Users\UserDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

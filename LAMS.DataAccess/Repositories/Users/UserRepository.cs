@@ -26,28 +26,7 @@ namespace Ecology.DataAccess.Repositories.Users
                 GC.SuppressFinalize(this);
             }
         }
-
-        public async Task<string> AddAsync(string email, string userName, string password)
-        {
-            string id = Guid.NewGuid().ToString();
-
-            var user = new UserDb
-            {
-                Id = id,
-                Created = DateTime.UtcNow,
-                Email = email,
-                Password = password,
-                UserName = userName,
-                RoleId = "f4c9fe7b-1e77-4e67-8800-1d33948b22a1",
-                Name = "",
-                Surname = "",
-            };
-
-            var result = _context.Users.Add(user);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
-
-            return result.UserName;
-        }    
+  
         public async Task<UserDb> DelUser(string Id)
         {
             UserDb user = await _context.Users.FirstOrDefaultAsync(p => p.Id == Id).ConfigureAwait(false);
@@ -81,6 +60,7 @@ namespace Ecology.DataAccess.Repositories.Users
             user.Id = Guid.NewGuid().ToString();
             user.Created = DateTime.UtcNow;
             user.RoleId = "f285ccac-1a2f-4df3-ace4-0751f105dafc";
+            user.Status = "Активен";
             _context.Users.Add(user);
 
             await _context.SaveChangesAsync().ConfigureAwait(false);

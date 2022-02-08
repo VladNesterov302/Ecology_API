@@ -11,9 +11,7 @@ namespace Ecology.Logic.Common.Services.Users
     /// </summary>
     public interface IRegistrationService : IDisposable
     {
-        Task<string> RegisterAsync(string email, string userName, string password);
-
-
+      
         Task<string> Registration(User user);
     }
 }

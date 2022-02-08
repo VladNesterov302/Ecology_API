@@ -12,9 +12,6 @@ namespace Ecology.DataAccess.ModelConfigurations.Auth
 
             HasKey(c =>  c.Id );
 
-            //HasMany(x => x.Users)
-            //    .WithOptional()
-            //    .HasForeignKey(x => x.RoleId);
         }
     }
 }

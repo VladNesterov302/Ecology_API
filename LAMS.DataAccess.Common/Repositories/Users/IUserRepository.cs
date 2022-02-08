@@ -13,8 +13,6 @@ namespace Ecology.DataAccess.Common.Repositories.Users
     /// </summary>
     public interface IUserRepository : IDisposable
     {
-        Task<string> AddAsync(string email, string userName, string password);
-
         Task<UserDb> SignIn(string userName, string password);
 
         Task<bool> IsUserNameAvailable(string userName);

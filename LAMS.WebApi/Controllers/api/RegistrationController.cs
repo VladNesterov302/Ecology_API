@@ -28,20 +28,6 @@ namespace Ecology.WebApi.Controllers.api
         }
 
        
-        [System.Web.Mvc.AllowAnonymous]
-        [HttpPost, Route("register")]
-        public async Task<IHttpActionResult> Register([FromBody] RegisterUser model)
-        {
-
-            var id = await _service.RegisterAsync(model.Email, model.UserName, model.Password);
-
-            if (id == null)
-            {
-                // throws 409 conflict
-                return Ok(0);
-            }
-            return Ok(id);
-        }
 
         [SwaggerResponseRemoveDefaults]
         [HttpPost, Route("adduser")]

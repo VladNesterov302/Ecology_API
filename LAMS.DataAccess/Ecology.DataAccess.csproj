@@ -109,9 +109,20 @@
     <Compile Include="Migrations\202202070942319_CreateUsers.Designer.cs">
       <DependentUpon>202202070942319_CreateUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202080957086_AddTables.cs" />
+    <Compile Include="Migrations\202202080957086_AddTables.Designer.cs">
+      <DependentUpon>202202080957086_AddTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ModelConfigurations\Air\AzotConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Air\OzonConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Air\PmConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Air\SeraConfiguration.cs" />
     <Compile Include="ModelConfigurations\Auth\RoleConfiguration.cs" />
     <Compile Include="ModelConfigurations\Auth\UserConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Location\CityConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Location\WaterObjectConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Radiation\RadiationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Users\UserRepository.cs" />
   </ItemGroup>
@@ -128,6 +139,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202070942319_CreateUsers.resx">
       <DependentUpon>202202070942319_CreateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202080957086_AddTables.resx">
+      <DependentUpon>202202080957086_AddTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

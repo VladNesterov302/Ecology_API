@@ -1,4 +1,6 @@
 ﻿
+using Ecology.DataAccess.Common.Models.Air;
+using Ecology.DataAccess.Common.Models.Radiation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +27,15 @@ namespace Ecology.DataAccess.Common.Models.Users
         public string Password { get; set; }
 
         public string UserName { get; set; }
+        public string Status { get; set; }
 
         public string RoleId { get; set; }
         public virtual RoleDb Role { get; set; }
-       
 
+        public virtual ICollection<RadiationDb> Radiations { get; set; }
+        public virtual ICollection<PmDb> Pms { get; set; }
+        public virtual ICollection<SeraDb> Seras { get; set; }
+        public virtual ICollection<OzonDb> Ozons { get; set; }
+        public virtual ICollection<AzotDb> Azots { get; set; }
     }
 }

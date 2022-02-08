@@ -34,17 +34,6 @@ namespace Ecology.Logic.Services.Users
             }
         }
 
-        public async Task<string> RegisterAsync(string email, string userName, string password)
-        {
-            if (!await _repo.IsUserNameAvailable(userName))
-            {
-                // throws 409 conflict
-                return null;
-            }
-            var id = await _repo.AddAsync(email, userName, password).ContinueWith(t => t.Result);
-            return id;
-        }
-
         public async Task<string> Registration(User user)
         {
             try
