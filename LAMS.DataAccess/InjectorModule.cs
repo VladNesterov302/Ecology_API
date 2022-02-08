@@ -1,6 +1,12 @@
 ﻿
+using Ecology.DataAccess.Common.Repositories.Air;
+using Ecology.DataAccess.Common.Repositories.Location;
+using Ecology.DataAccess.Common.Repositories.Radiation;
 using Ecology.DataAccess.Common.Repositories.Users;
 using Ecology.DataAccess.Contexts;
+using Ecology.DataAccess.Repositories.Air;
+using Ecology.DataAccess.Repositories.Location;
+using Ecology.DataAccess.Repositories.Radiation;
 using Ecology.DataAccess.Repositories.Users;
 using Ninject.Modules;
 
@@ -15,7 +21,7 @@ namespace Ecology.DataAccess
                 return;
             }
 
-            Bind<DocContext>().ToSelf().InTransientScope();
+            Bind<DocContext>().ToSelf().InSingletonScope();
 
 
 
@@ -25,6 +31,13 @@ namespace Ecology.DataAccess
         private void BindRepositories() { 
 
             Bind<IUserRepository>().To<UserRepository>();          
+            Bind<IRadiationRepository>().To<RadiationRepository>();          
+            Bind<ICityRepository>().To<CityRepository>();          
+            Bind<IWaterObjectRepository>().To<WaterObjectRepository>();          
+            Bind<IPmRepository>().To<PmRepository>();          
+            Bind<ISeraRepository>().To<SeraRepository>();          
+            Bind<IAzotRepository>().To<AzotRepository>();          
+            Bind<IOzonRepository>().To<OzonRepository>();          
         }
     }
 }

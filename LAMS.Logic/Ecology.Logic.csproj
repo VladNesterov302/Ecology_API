@@ -176,6 +176,13 @@
       <Name>Ecology.Logic.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mappings\Air\" />
+    <Folder Include="Mappings\Location\" />
+    <Folder Include="Mappings\Radiation\" />
+    <Folder Include="Services\Air\" />
+    <Folder Include="Services\Location\" />
+    <Folder Include="Services\Radiation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

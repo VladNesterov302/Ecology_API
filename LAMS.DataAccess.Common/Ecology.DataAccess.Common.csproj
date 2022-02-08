@@ -93,6 +93,13 @@
     <Compile Include="Models\Users\RoleDb.cs" />
     <Compile Include="Models\Users\UserDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Air\IAzotRepository.cs" />
+    <Compile Include="Repositories\Air\IOzonRepository.cs" />
+    <Compile Include="Repositories\Air\IPmRepository.cs" />
+    <Compile Include="Repositories\Air\ISeraRepository.cs" />
+    <Compile Include="Repositories\Location\ICityRepository.cs" />
+    <Compile Include="Repositories\Location\IWaterObjectRepository.cs" />
+    <Compile Include="Repositories\Radiation\IRadiationRepository.cs" />
     <Compile Include="Repositories\Users\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

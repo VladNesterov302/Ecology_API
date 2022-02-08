@@ -98,6 +98,13 @@
       <Name>Ecology.DataAccess.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Air\" />
+    <Folder Include="Models\Location\" />
+    <Folder Include="Models\Radiation\" />
+    <Folder Include="Services\Air\" />
+    <Folder Include="Services\Location\" />
+    <Folder Include="Services\Radiation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
