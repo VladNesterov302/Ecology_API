@@ -37,7 +37,7 @@ namespace Ecology.DataAccess.Repositories.Location
 
         public async Task<IEnumerable<WaterObjectDb>> GetWaterObjects()
         {
-            return await _context.WaterObjects.ToListAsync().ConfigureAwait(false);
+            return await _context.WaterObjects.OrderBy(w=>w.WaterObject).ToListAsync().ConfigureAwait(false);
         }
 
         public async Task<bool> IsWaterObjectAvailable(string waterObject)

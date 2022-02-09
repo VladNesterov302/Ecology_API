@@ -9,7 +9,9 @@ namespace Ecology.Logic.Mappings.Users
         public UserProfile()
         {
             CreateMap<User, UserDb>().ReverseMap();
-            CreateMap<UserDb, User>();
+            CreateMap<UserDb, User>();      
+            CreateMap<UserShort, UserDb>().ReverseMap();
+            CreateMap<UserDb, UserShort>();
         }
     }
 }

@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Ecology.Logic.Common.Services.Users
 {
-    /// <summary>
-    /// Standart BL level interface provides standart methods of working with User model.
-    /// </summary>
     public interface IUserService : IDisposable
     {
         Task<User> SignIn(string userName, string password);
@@ -17,5 +14,8 @@ namespace Ecology.Logic.Common.Services.Users
 
 
         Task<IEnumerable<User>> GetUsers();
+
+        Task<string> Block(string id);
+        Task<string> Unblock(string id);
     }
 }

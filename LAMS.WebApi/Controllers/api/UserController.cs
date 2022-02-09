@@ -74,5 +74,23 @@ namespace Ecology.WebApi.Controllers.api
 
             return Ok(user);
         }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("block")]
+        public async Task<IHttpActionResult> Block([FromUri] string id)
+        {
+            string _id = await _service.Block(id);
+
+            return Ok(_id);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("unblock")]
+        public async Task<IHttpActionResult> Unblock([FromUri] string id)
+        {
+            string _id = await _service.Unblock(id);
+
+            return Ok(_id);
+        }
     }
 }

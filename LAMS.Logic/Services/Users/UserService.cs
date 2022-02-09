@@ -56,7 +56,15 @@ namespace LAMS.Logic.Services.Users
             return await _repo.GetUsers()
                 .ContinueWith(t => _mapper.Map<IEnumerable<User>>(t.Result));
         }
+        public async Task<string> Block(string id)
+        {
+            return await _repo.Block(_mapper.Map<string>(id)).ContinueWith(t => t.Result);
 
+        }
+        public async Task<string> Unblock(string id)
+        {
+            return await _repo.Unblock(_mapper.Map<string>(id)).ContinueWith(t => t.Result);
+        }
         ~UserService()
         {
             Dispose();

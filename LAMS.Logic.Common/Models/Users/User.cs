@@ -27,5 +27,16 @@ namespace Ecology.Logic.Common.Models.Users
         public string RoleName { get; set; }
 
         public virtual RoleBLL Role { get; set; }
+
+        public string Status { get; set; }
+    }
+
+    public class UserShort
+    {
+
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
     }
 }

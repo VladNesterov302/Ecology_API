@@ -23,5 +23,8 @@ namespace Ecology.DataAccess.Common.Repositories.Users
         Task<IEnumerable<UserDb>> GetUsers();
 
         Task<string> Registration(UserDb user);
+
+        Task<string> Block(string id);
+        Task<string> Unblock(string id);
     }
 }

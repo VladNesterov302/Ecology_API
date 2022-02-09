@@ -27,7 +27,7 @@ namespace Ecology.DataAccess.Repositories.Location
 
         public async Task<int> EditCity(CityDb city)
         {
-            var cityInDb = await _context.Radiations.FirstOrDefaultAsync(p => p.Id == city.Id).ConfigureAwait(false);
+            var cityInDb = await _context.Cities.FirstOrDefaultAsync(p => p.Id == city.Id).ConfigureAwait(false);
 
             var entry = _context.Entry(cityInDb);
             entry.CurrentValues.SetValues(city);
@@ -37,7 +37,7 @@ namespace Ecology.DataAccess.Repositories.Location
 
         public async Task<IEnumerable<CityDb>> GetCities()
         {
-            return await _context.Cities.ToListAsync().ConfigureAwait(false);
+            return await _context.Cities.OrderBy(c=>c.City).ToListAsync().ConfigureAwait(false);
         }
 
         public async Task<bool> IsCityAvailable(string city)

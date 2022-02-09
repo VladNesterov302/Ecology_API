@@ -284,8 +284,10 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\HttpResponses\FileActionResult.cs" />
     <Compile Include="Areas\HttpResponses\PDFActionResult.cs" />
+    <Compile Include="Controllers\api\CityController.cs" />
     <Compile Include="Controllers\api\RegistrationController.cs" />
     <Compile Include="Controllers\api\UserController.cs" />
+    <Compile Include="Controllers\api\WaterObjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\Users\RegisterUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
