@@ -21,7 +21,7 @@ namespace Ecology.DataAccess
                 return;
             }
 
-            Bind<DocContext>().ToSelf().InSingletonScope();
+            Bind<DocContext>().ToSelf().InTransientScope();
 
 
 

@@ -17,7 +17,6 @@ namespace LAMS.WebApi
             };
 
             policy.Origins.Add("http://localhost:4200");
-            policy.Origins.Add("https://belinvestbank.ncpi.gov.by");
 
             //app.UseCors(CorsOptions.AllowAll);
 

@@ -17,7 +17,8 @@ namespace Ecology.DataAccess.Repositories.Radiation
         public RadiationRepository(DocContext context) => _context = context;
 
         public async Task<int> AddRadiation(RadiationDb radiation)
-        { 
+        {
+            radiation.Date = DateTime.Now;
             _context.Radiations.Add(radiation);
 
             await _context.SaveChangesAsync().ConfigureAwait(false);

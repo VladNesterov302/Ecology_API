@@ -46,7 +46,7 @@ namespace LAMS.WebApi.Controllers.api
         {
             int _city = await _service.EditCity(city);
 
-            return Ok(city);
+            return Ok(_city);
         }
 
     }

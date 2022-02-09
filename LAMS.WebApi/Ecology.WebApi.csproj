@@ -285,6 +285,7 @@
     <Compile Include="Areas\HttpResponses\FileActionResult.cs" />
     <Compile Include="Areas\HttpResponses\PDFActionResult.cs" />
     <Compile Include="Controllers\api\CityController.cs" />
+    <Compile Include="Controllers\api\RadiationController.cs" />
     <Compile Include="Controllers\api\RegistrationController.cs" />
     <Compile Include="Controllers\api\UserController.cs" />
     <Compile Include="Controllers\api\WaterObjectController.cs" />
