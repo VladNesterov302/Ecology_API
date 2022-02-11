@@ -14,7 +14,7 @@ namespace Ecology.DataAccess.Common.Models.Water
 
         public double Dose { get; set; }
 
-        public int Level { get; set; }
+        public string Level { get; set; }
 
         public int IdWaterObject { get; set; }
 

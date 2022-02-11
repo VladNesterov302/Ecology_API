@@ -14,11 +14,11 @@ namespace Ecology.Logic.Common.Models.Air
 
         public double Dose { get; set; }
 
-        public int Level { get; set; }
+        public string Level { get; set; }
 
         public double Dose10 { get; set; }
 
-        public int Level10 { get; set; }
+        public string Level10 { get; set; }
 
         public int IdCity { get; set; }
 
