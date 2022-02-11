@@ -3,10 +3,12 @@ using Ecology.DataAccess.Common.Models.Air;
 using Ecology.DataAccess.Common.Models.Location;
 using Ecology.DataAccess.Common.Models.Radiation;
 using Ecology.DataAccess.Common.Models.Users;
+using Ecology.DataAccess.Common.Models.Water;
 using Ecology.DataAccess.ModelConfigurations.Air;
 using Ecology.DataAccess.ModelConfigurations.Auth;
 using Ecology.DataAccess.ModelConfigurations.Location;
 using Ecology.DataAccess.ModelConfigurations.Radiation;
+using Ecology.DataAccess.ModelConfigurations.Water;
 using System.Collections.Generic;
 using System.Data.Entity;
 
@@ -31,6 +33,9 @@ namespace Ecology.DataAccess.Contexts
             modelBuilder.Configurations.Add(new SeraConfiguration());
             modelBuilder.Configurations.Add(new AzotConfiguration());
             modelBuilder.Configurations.Add(new OzonConfiguration());
+            modelBuilder.Configurations.Add(new BioOxygenConfiguration());
+            modelBuilder.Configurations.Add(new ChemicalOxygenConfiguration());
+            modelBuilder.Configurations.Add(new PhConfiguration());
 
         }
         public IDbSet<UserDb> Users { get; set; }
@@ -43,6 +48,9 @@ namespace Ecology.DataAccess.Contexts
         public IDbSet<SeraDb> Seras { get; set; }
         public IDbSet<AzotDb> Azots { get; set; }
         public IDbSet<OzonDb> Ozons { get; set; }
+        public IDbSet<BioOxygenDb> BioOxygens { get; set; }
+        public IDbSet<ChemicalOxygenDb> ChemicalOxygens { get; set; }
+        public IDbSet<PhDb> Phs { get; set; }
   
     }
 }

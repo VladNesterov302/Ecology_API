@@ -47,7 +47,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<IEnumerable<PmDb>> GetPms()
         {
-            return await _context.Pms.ToListAsync().ConfigureAwait(false);
+            return await _context.Pms.OrderByDescending(r => r.Id).ToListAsync().ConfigureAwait(false);
         }
     }
 }

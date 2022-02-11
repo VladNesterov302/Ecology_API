@@ -57,7 +57,7 @@ namespace LAMS.WebApi
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
-                kernel.Load(new Ecology.DataAccess.InjectorModule(), new Logic.InjectorModule());
+                kernel.Load(new Ecology.DataAccess.InjectorModule(), new Ecology.Logic.InjectorModule());
 
                 return kernel;
             }

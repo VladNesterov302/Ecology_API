@@ -47,7 +47,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<IEnumerable<AzotDb>> GetAzots()
         {
-            return await _context.Azots.ToListAsync().ConfigureAwait(false);
+            return await _context.Azots.OrderByDescending(r => r.Id).ToListAsync().ConfigureAwait(false);
         }
     }
 }

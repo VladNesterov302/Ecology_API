@@ -3,11 +3,13 @@ using Ecology.DataAccess.Common.Repositories.Air;
 using Ecology.DataAccess.Common.Repositories.Location;
 using Ecology.DataAccess.Common.Repositories.Radiation;
 using Ecology.DataAccess.Common.Repositories.Users;
+using Ecology.DataAccess.Common.Repositories.Water;
 using Ecology.DataAccess.Contexts;
 using Ecology.DataAccess.Repositories.Air;
 using Ecology.DataAccess.Repositories.Location;
 using Ecology.DataAccess.Repositories.Radiation;
 using Ecology.DataAccess.Repositories.Users;
+using Ecology.DataAccess.Repositories.Water;
 using Ninject.Modules;
 
 namespace Ecology.DataAccess
@@ -38,6 +40,9 @@ namespace Ecology.DataAccess
             Bind<ISeraRepository>().To<SeraRepository>();          
             Bind<IAzotRepository>().To<AzotRepository>();          
             Bind<IOzonRepository>().To<OzonRepository>();          
+            Bind<IBioOxygenRepository>().To<BioOxygenRepository>();          
+            Bind<IChemicalOxygenRepository>().To<ChemicalOxygenRepository>();          
+            Bind<IPhRepository>().To<PhRepository>();          
         }
     }
 }

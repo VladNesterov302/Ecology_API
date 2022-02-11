@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
-namespace LAMS.WebApi.Controllers.api
+namespace Ecology.WebApi.Controllers.api
 {
     [System.Web.Mvc.AllowAnonymous]
     [RoutePrefix("api/radiation")]

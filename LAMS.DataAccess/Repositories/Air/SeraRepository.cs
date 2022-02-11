@@ -47,7 +47,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<IEnumerable<SeraDb>> GetSeras()
         {
-            return await _context.Seras.ToListAsync().ConfigureAwait(false);
+            return await _context.Seras.OrderByDescending(r => r.Id).ToListAsync().ConfigureAwait(false);
         }
     }
 }

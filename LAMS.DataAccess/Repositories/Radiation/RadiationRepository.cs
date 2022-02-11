@@ -48,7 +48,7 @@ namespace Ecology.DataAccess.Repositories.Radiation
 
         public async Task<IEnumerable<RadiationDb>> GetRadiations()
         {
-            return await _context.Radiations.ToListAsync().ConfigureAwait(false);
+            return await _context.Radiations.OrderByDescending(r=>r.Id).ToListAsync().ConfigureAwait(false);
         }
     }
 }

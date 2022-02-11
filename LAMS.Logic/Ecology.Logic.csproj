@@ -165,6 +165,9 @@
     <Compile Include="Mappings\Location\WaterObjectProfile.cs" />
     <Compile Include="Mappings\Radiation\RadiationProfile.cs" />
     <Compile Include="Mappings\Users\UserProfile.cs" />
+    <Compile Include="Mappings\Water\BioOxygenProfile.cs" />
+    <Compile Include="Mappings\Water\ChemicalOxygenProfile.cs" />
+    <Compile Include="Mappings\Water\PhProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Air\AzotService.cs" />
     <Compile Include="Services\Air\OzonService.cs" />
@@ -175,6 +178,9 @@
     <Compile Include="Services\Radiation\RadiationService.cs" />
     <Compile Include="Services\Users\RegistrationService.cs" />
     <Compile Include="Services\Users\UserService.cs" />
+    <Compile Include="Services\Water\BioOxygenService.cs" />
+    <Compile Include="Services\Water\ChemicalOxygenService.cs" />
+    <Compile Include="Services\Water\PhService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

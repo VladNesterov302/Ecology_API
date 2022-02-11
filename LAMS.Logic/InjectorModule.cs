@@ -17,8 +17,11 @@ using Ecology.Logic.Common.Services.Air;
 using Ecology.Logic.Mappings.Radiation;
 using Ecology.Logic.Mappings.Location;
 using Ecology.Logic.Mappings.Air;
+using Ecology.Logic.Common.Services.Water;
+using Ecology.Logic.Services.Water;
+using Ecology.Logic.Mappings.Water;
 
-namespace LAMS.Logic
+namespace Ecology.Logic
 {
     public class InjectorModule : NinjectModule
     {
@@ -57,7 +60,7 @@ namespace LAMS.Logic
                 {
                     cfg.AddProfile<UserProfile>();
                 })))
-                .WhenInjectedExactlyInto<RegistrationService>();     
+                .WhenInjectedExactlyInto<RegistrationService>();
 
             Bind<IMapper>().ToMethod(ctx =>
                 new Mapper(new MapperConfiguration(cfg =>
@@ -118,7 +121,32 @@ namespace LAMS.Logic
                 })))
                 .WhenInjectedExactlyInto<SeraService>();
 
+            Bind<IMapper>().ToMethod(ctx =>
+               new Mapper(new MapperConfiguration(cfg =>
+               {
+                   cfg.AddProfile<BioOxygenProfile>();
+                   cfg.AddProfile<WaterObjectProfile>();
+                   cfg.AddProfile<UserProfile>();
+               })))
+               .WhenInjectedExactlyInto<BioOxygenService>();
 
+            Bind<IMapper>().ToMethod(ctx =>
+               new Mapper(new MapperConfiguration(cfg =>
+               {
+                   cfg.AddProfile<ChemicalOxygenProfile>();
+                   cfg.AddProfile<WaterObjectProfile>();
+                   cfg.AddProfile<UserProfile>();
+               })))
+               .WhenInjectedExactlyInto<ChemicalOxygenService>();
+
+            Bind<IMapper>().ToMethod(ctx =>
+               new Mapper(new MapperConfiguration(cfg =>
+               {
+                   cfg.AddProfile<PhProfile>();
+                   cfg.AddProfile<WaterObjectProfile>();
+                   cfg.AddProfile<UserProfile>();
+               })))
+               .WhenInjectedExactlyInto<PhService>();
 
         }
         private void BindServices()
@@ -133,6 +161,9 @@ namespace LAMS.Logic
             Bind<IOzonService>().To<OzonService>();
             Bind<IPmService>().To<PmService>();
             Bind<ISeraService>().To<SeraService>();
+            Bind<IBioOxygenService>().To<BioOxygenService>();
+            Bind<IChemicalOxygenService>().To<ChemicalOxygenService>();
+            Bind<IPhService>().To<PhService>();
         }
     }
 }

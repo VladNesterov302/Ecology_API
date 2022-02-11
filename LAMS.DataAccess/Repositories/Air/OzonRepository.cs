@@ -47,7 +47,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<IEnumerable<OzonDb>> GetOzons()
         {
-            return await _context.Ozons.ToListAsync().ConfigureAwait(false);
+            return await _context.Ozons.OrderByDescending(r => r.Id).ToListAsync().ConfigureAwait(false);
         }
     }
 }

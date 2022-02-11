@@ -113,6 +113,10 @@
     <Compile Include="Migrations\202202080957086_AddTables.Designer.cs">
       <DependentUpon>202202080957086_AddTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202101259456_AddWater.cs" />
+    <Compile Include="Migrations\202202101259456_AddWater.Designer.cs">
+      <DependentUpon>202202101259456_AddWater.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfigurations\Air\AzotConfiguration.cs" />
     <Compile Include="ModelConfigurations\Air\OzonConfiguration.cs" />
@@ -123,6 +127,9 @@
     <Compile Include="ModelConfigurations\Location\CityConfiguration.cs" />
     <Compile Include="ModelConfigurations\Location\WaterObjectConfiguration.cs" />
     <Compile Include="ModelConfigurations\Radiation\RadiationConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Water\BioOxygenConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Water\ChemicalOxygenConfiguration.cs" />
+    <Compile Include="ModelConfigurations\Water\PhConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Air\AzotRepository.cs" />
     <Compile Include="Repositories\Air\OzonRepository.cs" />
@@ -132,6 +139,9 @@
     <Compile Include="Repositories\Location\WaterObjectRepository.cs" />
     <Compile Include="Repositories\Radiation\RadiationRepository.cs" />
     <Compile Include="Repositories\Users\UserRepository.cs" />
+    <Compile Include="Repositories\Water\BioOxygenRepository.cs" />
+    <Compile Include="Repositories\Water\ChemicalOxygenRepository.cs" />
+    <Compile Include="Repositories\Water\PhRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Fakes Include="Fakes\Microsoft.AspNet.Identity.Core.fakes" />
@@ -149,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202080957086_AddTables.resx">
       <DependentUpon>202202080957086_AddTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202101259456_AddWater.resx">
+      <DependentUpon>202202101259456_AddWater.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
