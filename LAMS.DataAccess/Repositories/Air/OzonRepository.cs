@@ -18,6 +18,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<int> AddOzon(OzonDb ozon)
         {
+            ozon.Date = DateTime.Now;
             _context.Ozons.Add(ozon);
 
             await _context.SaveChangesAsync().ConfigureAwait(false);

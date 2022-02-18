@@ -18,6 +18,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<int> AddPm(PmDb pm)
         {
+            pm.Date = DateTime.Now;
             _context.Pms.Add(pm);
 
             await _context.SaveChangesAsync().ConfigureAwait(false);

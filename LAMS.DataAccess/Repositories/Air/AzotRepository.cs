@@ -18,6 +18,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<int> AddAzot(AzotDb azot)
         {
+            azot.Date = DateTime.Now;
             _context.Azots.Add(azot);
 
             await _context.SaveChangesAsync().ConfigureAwait(false);

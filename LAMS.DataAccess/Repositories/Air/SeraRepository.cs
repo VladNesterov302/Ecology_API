@@ -18,6 +18,7 @@ namespace Ecology.DataAccess.Repositories.Air
 
         public async Task<int> AddSera(SeraDb sera)
         {
+            sera.Date = DateTime.Now;
             _context.Seras.Add(sera);
 
             await _context.SaveChangesAsync().ConfigureAwait(false);
