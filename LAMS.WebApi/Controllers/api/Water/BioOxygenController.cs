@@ -1,4 +1,5 @@
-﻿using Ecology.Logic.Common.Models.Water;
+﻿using Ecology.Logic.Common.Models.Statistic;
+using Ecology.Logic.Common.Models.Water;
 using Ecology.Logic.Common.Services.Water;
 using Swagger.Net.Annotations;
 using System;
@@ -57,6 +58,32 @@ namespace Ecology.WebApi.Controllers.api.Water
             var bio = await _service.DelBioOxygen(id);
 
             return Ok(bio);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getlevelbiooxygenstatistic")]
+        public async Task<IHttpActionResult> GetLevelStatistic()
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetLevelStatistic();
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getwaterobjectbiooxygenstatistic")]
+        public async Task<IHttpActionResult> GetWaterObjectStatistic([FromUri] int id)
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetWaterObjectStatistic(id);
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
         }
     }
 }

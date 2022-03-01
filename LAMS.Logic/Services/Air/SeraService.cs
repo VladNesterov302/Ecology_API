@@ -2,6 +2,7 @@
 using Ecology.DataAccess.Common.Models.Air;
 using Ecology.DataAccess.Common.Repositories.Air;
 using Ecology.Logic.Common.Models.Air;
+using Ecology.Logic.Common.Models.Statistic;
 using Ecology.Logic.Common.Services.Air;
 using System;
 using System.Collections.Generic;
@@ -51,5 +52,16 @@ namespace Ecology.Logic.Services.Air
             return await _repo.GetSeras()
                .ContinueWith(t => _mapper.Map<IEnumerable<SeraBLL>>(t.Result));
         }
+        public async Task<IEnumerable<LevelStatisticBLL>> GetLevelStatistic()
+        {
+            return await _repo.GetLevelStatistic()
+                .ContinueWith(t => _mapper.Map<IEnumerable<LevelStatisticBLL>>(t.Result));
+        }
+        public async Task<IEnumerable<LevelStatisticBLL>> GetCityStatistic(int id)
+        {
+            return await _repo.GetCityStatistic(id)
+                .ContinueWith(t => _mapper.Map<IEnumerable<LevelStatisticBLL>>(t.Result));
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Ecology.DataAccess.Common.Models.Air;
+﻿using Ecology.DataAccess.Common.DTO;
+using Ecology.DataAccess.Common.Models.Air;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace Ecology.DataAccess.Common.Repositories.Air
         Task<IEnumerable<SeraDb>> GetSeras();
         Task<SeraDb> DelSera(int id);
         Task<int> EditSera(SeraDb sera);
+        Task<IEnumerable<LevelStatisticDTO>> GetLevelStatistic();
+        Task<IEnumerable<LevelStatisticDTO>> GetCityStatistic(int id);
     }
 }

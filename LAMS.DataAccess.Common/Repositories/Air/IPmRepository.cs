@@ -1,4 +1,5 @@
-﻿using Ecology.DataAccess.Common.Models.Air;
+﻿using Ecology.DataAccess.Common.DTO;
+using Ecology.DataAccess.Common.Models.Air;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,9 @@ namespace Ecology.DataAccess.Common.Repositories.Air
         Task<IEnumerable<PmDb>> GetPms();
         Task<PmDb> DelPm(int id);
         Task<int> EditPm(PmDb pm);
+        Task<IEnumerable<LevelStatisticDTO>> GetLevelStatistic();
+        Task<IEnumerable<LevelStatisticDTO>> GetLevel10Statistic();
+        Task<IEnumerable<LevelStatisticDTO>> GetCityStatistic(int id);
+        Task<IEnumerable<LevelStatisticDTO>> GetCity10Statistic(int id);
     }
 }

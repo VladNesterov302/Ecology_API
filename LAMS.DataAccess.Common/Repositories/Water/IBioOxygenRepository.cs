@@ -1,4 +1,5 @@
-﻿using Ecology.DataAccess.Common.Models.Water;
+﻿using Ecology.DataAccess.Common.DTO;
+using Ecology.DataAccess.Common.Models.Water;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,8 @@ namespace Ecology.DataAccess.Common.Repositories.Water
         Task<IEnumerable<BioOxygenDb>> GetBioOxygens();
         Task<BioOxygenDb> DelBioOxygen(int id);
         Task<int> EditBioOxygen(BioOxygenDb oxygen);
+
+        Task<IEnumerable<LevelStatisticDTO>> GetLevelStatistic();
+        Task<IEnumerable<LevelStatisticDTO>> GetWaterObjectStatistic(int id);
     }
 }

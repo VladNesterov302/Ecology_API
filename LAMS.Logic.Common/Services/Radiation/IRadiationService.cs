@@ -1,4 +1,5 @@
 ﻿using Ecology.Logic.Common.Models.Radiation;
+using Ecology.Logic.Common.Models.Statistic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,8 @@ namespace Ecology.Logic.Common.Services.Radiation
         Task<IEnumerable<RadiationBLL>> GetRadiations();
         Task<RadiationBLL> DelRadiation(int id);
         Task<int> EditRadiation(RadiationBLL radiation);
+
+        Task<IEnumerable<LevelRadiationStatisticBLL>> GetLevelStatistic();
+        Task<IEnumerable<LevelRadiationStatisticBLL>> GetCityStatistic(int id);
     }
 }

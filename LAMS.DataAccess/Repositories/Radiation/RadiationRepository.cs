@@ -1,4 +1,5 @@
-﻿using Ecology.DataAccess.Common.Models.Radiation;
+﻿using Ecology.DataAccess.Common.DTO;
+using Ecology.DataAccess.Common.Models.Radiation;
 using Ecology.DataAccess.Common.Repositories.Radiation;
 using Ecology.DataAccess.Contexts;
 using System;
@@ -48,7 +49,37 @@ namespace Ecology.DataAccess.Repositories.Radiation
 
         public async Task<IEnumerable<RadiationDb>> GetRadiations()
         {
-            return await _context.Radiations.OrderByDescending(r=>r.Id).ToListAsync().ConfigureAwait(false);
+            return await _context.Radiations.OrderByDescending(r => r.Id).ToListAsync().ConfigureAwait(false);
+        }
+
+        public async Task<IEnumerable<LevelRadiationStatisticDTO>> GetLevelStatistic()
+        {
+            List<LevelRadiationStatisticDTO> stat = await _context.Radiations
+                .GroupBy(o => o.Level)
+                 .Select(m =>
+                    new LevelRadiationStatisticDTO
+                    {
+                        Level = m.Key,
+                        Number = m.Count()
+                    })
+                 .OrderBy(o => o.Level).ToListAsync();
+
+            return stat;
+        }
+
+        public async Task<IEnumerable<LevelRadiationStatisticDTO>> GetCityStatistic(int id)
+        {
+            List<LevelRadiationStatisticDTO> stat = await _context.Radiations.Where(s => s.IdCity == id)
+                .GroupBy(o => o.Level)
+                 .Select(m =>
+                    new LevelRadiationStatisticDTO
+                    {
+                        Level = m.Key,
+                        Number = m.Count()
+                    })
+                 .OrderBy(o => o.Level).ToListAsync();
+
+            return stat;
         }
     }
 }

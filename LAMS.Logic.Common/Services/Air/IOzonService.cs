@@ -1,4 +1,5 @@
 ﻿using Ecology.Logic.Common.Models.Air;
+using Ecology.Logic.Common.Models.Statistic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace Ecology.Logic.Common.Services.Air
         Task<IEnumerable<OzonBLL>> GetOzons();
         Task<OzonBLL> DelOzon(int id);
         Task<int> EditOzon(OzonBLL ozon);
+        Task<IEnumerable<LevelStatisticBLL>> GetLevelStatistic();
+        Task<IEnumerable<LevelStatisticBLL>> GetCityStatistic(int id);
     }
 }

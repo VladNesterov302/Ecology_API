@@ -1,4 +1,5 @@
-﻿using Ecology.DataAccess.Common.Models.Air;
+﻿using Ecology.DataAccess.Common.DTO;
+using Ecology.DataAccess.Common.Models.Air;
 using Ecology.DataAccess.Common.Repositories.Air;
 using Ecology.DataAccess.Contexts;
 using System;
@@ -50,5 +51,36 @@ namespace Ecology.DataAccess.Repositories.Air
         {
             return await _context.Ozons.OrderByDescending(r => r.Id).ToListAsync().ConfigureAwait(false);
         }
+
+        public async Task<IEnumerable<LevelStatisticDTO>> GetLevelStatistic()
+        {
+            List<LevelStatisticDTO> stat = await _context.Ozons
+                .GroupBy(o => o.Level)
+                 .Select(m =>
+                    new LevelStatisticDTO
+                    {
+                        Level = m.Key,
+                        Number = m.Count()
+                    })
+                 .OrderBy(o => o.Level).ToListAsync();
+
+            return stat;
+        }
+        public async Task<IEnumerable<LevelStatisticDTO>> GetCityStatistic(int id)
+        {
+            List<LevelStatisticDTO> stat = await _context.Ozons.Where(s => s.IdCity == id)
+                .GroupBy(o => o.Level)
+                 .Select(m =>
+                    new LevelStatisticDTO
+                    {
+                        Level = m.Key,
+                        Number = m.Count()
+                    })
+                 .OrderBy(o => o.Level).ToListAsync();
+
+            return stat;
+        }
+
+
     }
 }

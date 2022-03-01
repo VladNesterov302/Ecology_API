@@ -1,4 +1,5 @@
-﻿using Ecology.DataAccess.Common.Models.Water;
+﻿using Ecology.DataAccess.Common.DTO;
+using Ecology.DataAccess.Common.Models.Water;
 using Ecology.DataAccess.Common.Repositories.Water;
 using Ecology.DataAccess.Contexts;
 using System;
@@ -47,6 +48,35 @@ namespace Ecology.DataAccess.Repositories.Water
         public async Task<IEnumerable<PhDb>> GetPhs()
         {
             return await _context.Phs.ToListAsync().ConfigureAwait(false);
+        }
+        public async Task<IEnumerable<LevelStatisticDTO>> GetLevelStatistic()
+        {
+            List<LevelStatisticDTO> stat = await _context.Phs
+                .GroupBy(o => o.Level)
+                 .Select(m =>
+                    new LevelStatisticDTO
+                    {
+                        Level = m.Key,
+                        Number = m.Count()
+                    })
+                 .OrderBy(o => o.Level).ToListAsync();
+
+            return stat;
+        }
+
+        public async Task<IEnumerable<LevelStatisticDTO>> GetWaterObjectStatistic(int id)
+        {
+            List<LevelStatisticDTO> stat = await _context.Phs.Where(s => s.IdWaterObject == id)
+                .GroupBy(o => o.Level)
+                 .Select(m =>
+                    new LevelStatisticDTO
+                    {
+                        Level = m.Key,
+                        Number = m.Count()
+                    })
+                 .OrderBy(o => o.Level).ToListAsync();
+
+            return stat;
         }
     }
 }

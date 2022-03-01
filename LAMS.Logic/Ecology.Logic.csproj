@@ -164,6 +164,8 @@
     <Compile Include="Mappings\Location\CityProfile.cs" />
     <Compile Include="Mappings\Location\WaterObjectProfile.cs" />
     <Compile Include="Mappings\Radiation\RadiationProfile.cs" />
+    <Compile Include="Mappings\Statistic\RadiationStatisticProfile.cs" />
+    <Compile Include="Mappings\Statistic\LevelStatisticProfile.cs" />
     <Compile Include="Mappings\Users\UserProfile.cs" />
     <Compile Include="Mappings\Water\BioOxygenProfile.cs" />
     <Compile Include="Mappings\Water\ChemicalOxygenProfile.cs" />

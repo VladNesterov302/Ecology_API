@@ -83,6 +83,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\DocumentDTO.cs" />
+    <Compile Include="DTO\LevelRadiationStatisticDTO.cs" />
+    <Compile Include="DTO\LevelStatisticDTO.cs" />
     <Compile Include="Models\Air\AzotDb.cs" />
     <Compile Include="Models\Air\OzonDb.cs" />
     <Compile Include="Models\Air\PmDb.cs" />

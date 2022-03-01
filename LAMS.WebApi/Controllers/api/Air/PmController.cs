@@ -1,4 +1,5 @@
 ﻿using Ecology.Logic.Common.Models.Air;
+using Ecology.Logic.Common.Models.Statistic;
 using Ecology.Logic.Common.Services.Air;
 using Swagger.Net.Annotations;
 using System;
@@ -57,6 +58,57 @@ namespace Ecology.WebApi.Controllers.api.Air
             var pm = await _service.DelPm(id);
 
             return Ok(pm);
+        }
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getlevelpmstatistic")]
+        public async Task<IHttpActionResult> GetLevelStatistic()
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetLevelStatistic();
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getlevelpm10statistic")]
+        public async Task<IHttpActionResult> GetLevel10Statistic()
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetLevel10Statistic();
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getcitypmstatistic")]
+        public async Task<IHttpActionResult> GetCityStatistic([FromUri] int id)
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetCityStatistic(id);
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getcitypm10statistic")]
+        public async Task<IHttpActionResult> GetCity10Statistic([FromUri] int id)
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetCity10Statistic(id);
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
         }
     }
 }

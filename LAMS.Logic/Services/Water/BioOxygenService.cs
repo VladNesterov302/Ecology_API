@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Ecology.DataAccess.Common.Models.Water;
 using Ecology.DataAccess.Common.Repositories.Water;
+using Ecology.Logic.Common.Models.Statistic;
 using Ecology.Logic.Common.Models.Water;
 using Ecology.Logic.Common.Services.Water;
 using System;
@@ -51,6 +52,17 @@ namespace Ecology.Logic.Services.Water
         {
             return await _repo.GetBioOxygens()
                .ContinueWith(t => _mapper.Map<IEnumerable<BioOxygenBLL>>(t.Result));
+        }
+        public async Task<IEnumerable<LevelStatisticBLL>> GetLevelStatistic()
+        {
+            return await _repo.GetLevelStatistic()
+                .ContinueWith(t => _mapper.Map<IEnumerable<LevelStatisticBLL>>(t.Result));
+        }
+
+        public async Task<IEnumerable<LevelStatisticBLL>> GetWaterObjectStatistic(int id)
+        {
+            return await _repo.GetWaterObjectStatistic(id)
+                .ContinueWith(t => _mapper.Map<IEnumerable<LevelStatisticBLL>>(t.Result));
         }
     }
 }

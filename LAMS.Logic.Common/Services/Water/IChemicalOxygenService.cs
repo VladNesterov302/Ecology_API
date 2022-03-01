@@ -1,4 +1,5 @@
-﻿using Ecology.Logic.Common.Models.Water;
+﻿using Ecology.Logic.Common.Models.Statistic;
+using Ecology.Logic.Common.Models.Water;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace Ecology.Logic.Common.Services.Water
         Task<IEnumerable<ChemicalOxygenBLL>> GetChemicalOxygens();
         Task<ChemicalOxygenBLL> DelChemicalOxygen(int id);
         Task<int> EditChemicalOxygen(ChemicalOxygenBLL chemicalOxygen);
+        Task<IEnumerable<LevelStatisticBLL>> GetLevelStatistic();
+        Task<IEnumerable<LevelStatisticBLL>> GetWaterObjectStatistic(int id);
     }
 }

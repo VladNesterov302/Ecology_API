@@ -20,6 +20,7 @@ using Ecology.Logic.Mappings.Air;
 using Ecology.Logic.Common.Services.Water;
 using Ecology.Logic.Services.Water;
 using Ecology.Logic.Mappings.Water;
+using Ecology.Logic.Mappings.Statistic;
 
 namespace Ecology.Logic
 {
@@ -68,6 +69,8 @@ namespace Ecology.Logic
                     cfg.AddProfile<RadiationProfile>();
                     cfg.AddProfile<CityProfile>();
                     cfg.AddProfile<UserProfile>();
+                    cfg.AddProfile<RadiationStatisticProfile>();
+                    cfg.AddProfile<LevelStatisticProfile>();
                 })))
                 .WhenInjectedExactlyInto<RadiationService>();
 
@@ -91,6 +94,7 @@ namespace Ecology.Logic
                     cfg.AddProfile<AzotProfile>();
                     cfg.AddProfile<CityProfile>();
                     cfg.AddProfile<UserProfile>();
+                    cfg.AddProfile<LevelStatisticProfile>();
                 })))
                 .WhenInjectedExactlyInto<AzotService>();
 
@@ -100,6 +104,7 @@ namespace Ecology.Logic
                     cfg.AddProfile<OzonProfile>();
                     cfg.AddProfile<CityProfile>();
                     cfg.AddProfile<UserProfile>();
+                    cfg.AddProfile<LevelStatisticProfile>();
                 })))
                 .WhenInjectedExactlyInto<OzonService>();
 
@@ -109,6 +114,7 @@ namespace Ecology.Logic
                     cfg.AddProfile<PmProfile>();
                     cfg.AddProfile<CityProfile>();
                     cfg.AddProfile<UserProfile>();
+                    cfg.AddProfile<LevelStatisticProfile>();
                 })))
                 .WhenInjectedExactlyInto<PmService>();
 
@@ -118,6 +124,7 @@ namespace Ecology.Logic
                     cfg.AddProfile<SeraProfile>();
                     cfg.AddProfile<CityProfile>();
                     cfg.AddProfile<UserProfile>();
+                    cfg.AddProfile<LevelStatisticProfile>();
                 })))
                 .WhenInjectedExactlyInto<SeraService>();
 
@@ -127,6 +134,7 @@ namespace Ecology.Logic
                    cfg.AddProfile<BioOxygenProfile>();
                    cfg.AddProfile<WaterObjectProfile>();
                    cfg.AddProfile<UserProfile>();
+                   cfg.AddProfile<LevelStatisticProfile>();
                })))
                .WhenInjectedExactlyInto<BioOxygenService>();
 
@@ -136,6 +144,7 @@ namespace Ecology.Logic
                    cfg.AddProfile<ChemicalOxygenProfile>();
                    cfg.AddProfile<WaterObjectProfile>();
                    cfg.AddProfile<UserProfile>();
+                   cfg.AddProfile<LevelStatisticProfile>();
                })))
                .WhenInjectedExactlyInto<ChemicalOxygenService>();
 
@@ -145,6 +154,7 @@ namespace Ecology.Logic
                    cfg.AddProfile<PhProfile>();
                    cfg.AddProfile<WaterObjectProfile>();
                    cfg.AddProfile<UserProfile>();
+                   cfg.AddProfile<LevelStatisticProfile>();
                })))
                .WhenInjectedExactlyInto<PhService>();
 

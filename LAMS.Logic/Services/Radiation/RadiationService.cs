@@ -2,6 +2,7 @@
 using Ecology.DataAccess.Common.Models.Radiation;
 using Ecology.DataAccess.Common.Repositories.Radiation;
 using Ecology.Logic.Common.Models.Radiation;
+using Ecology.Logic.Common.Models.Statistic;
 using Ecology.Logic.Common.Services.Radiation;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,18 @@ namespace Ecology.Logic.Services.Radiation
         {
             return await _repo.GetRadiations()
                 .ContinueWith(t => _mapper.Map<IEnumerable<RadiationBLL>>(t.Result));
+        }
+
+        public async Task<IEnumerable<LevelRadiationStatisticBLL>> GetLevelStatistic()
+        {
+            return await _repo.GetLevelStatistic()
+                .ContinueWith(t => _mapper.Map<IEnumerable<LevelRadiationStatisticBLL>>(t.Result));
+        }
+
+        public async Task<IEnumerable<LevelRadiationStatisticBLL>> GetCityStatistic(int id)
+        {
+            return await _repo.GetCityStatistic(id)
+                .ContinueWith(t => _mapper.Map<IEnumerable<LevelRadiationStatisticBLL>>(t.Result));
         }
     }
 }

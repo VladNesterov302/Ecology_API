@@ -1,4 +1,5 @@
 ﻿using Ecology.Logic.Common.Models.Air;
+using Ecology.Logic.Common.Models.Statistic;
 using Ecology.Logic.Common.Services.Air;
 using Swagger.Net.Annotations;
 using System;
@@ -58,5 +59,31 @@ namespace Ecology.WebApi.Controllers.api.Air
 
             return Ok(azot);
         }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getlevelozonstatistic")]
+        public async Task<IHttpActionResult> GetLevelStatistic()
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetLevelStatistic();
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
+        }
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getcityozonstatistic")]
+        public async Task<IHttpActionResult> GetCityStatistic([FromUri] int id)
+        {
+            IEnumerable<LevelStatisticBLL> levelStatistics = await _service.GetCityStatistic(id);
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
+        }
+
     }
 }

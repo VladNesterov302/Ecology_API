@@ -1,4 +1,5 @@
 ﻿using Ecology.Logic.Common.Models.Radiation;
+using Ecology.Logic.Common.Models.Statistic;
 using Ecology.Logic.Common.Services.Radiation;
 using Swagger.Net.Annotations;
 using System;
@@ -54,10 +55,36 @@ namespace Ecology.WebApi.Controllers.api
         [HttpGet, Route("delradiation")]
         public async Task<IHttpActionResult> DelRadiation([FromUri] int id)
         {
-           
+
             var radiation = await _service.DelRadiation(id);
 
             return Ok(radiation);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getlevelradiationstatistic")]
+        public async Task<IHttpActionResult> GetLevelStatistic()
+        {
+            IEnumerable<LevelRadiationStatisticBLL> levelStatistics = await _service.GetLevelStatistic();
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
+        }
+
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("getcityradiationstatistic")]
+        public async Task<IHttpActionResult> GetCityStatistic([FromUri] int id)
+        {
+            IEnumerable<LevelRadiationStatisticBLL> levelStatistics = await _service.GetCityStatistic(id);
+            if (levelStatistics == null)
+            {
+                return BadRequest("Ошибка в запросе");
+            }
+
+            return Ok(levelStatistics);
         }
 
     }

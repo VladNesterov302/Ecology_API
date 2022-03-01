@@ -1,4 +1,5 @@
 ﻿using Ecology.Logic.Common.Models.Air;
+using Ecology.Logic.Common.Models.Statistic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,9 @@ namespace Ecology.Logic.Common.Services.Air
         Task<IEnumerable<PmBLL>> GetPms();
         Task<PmBLL> DelPm(int id);
         Task<int> EditPm(PmBLL pm);
+        Task<IEnumerable<LevelStatisticBLL>> GetLevelStatistic();
+        Task<IEnumerable<LevelStatisticBLL>> GetLevel10Statistic();
+        Task<IEnumerable<LevelStatisticBLL>> GetCityStatistic(int id);
+        Task<IEnumerable<LevelStatisticBLL>> GetCity10Statistic(int id);
     }
 }

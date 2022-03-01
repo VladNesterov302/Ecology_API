@@ -89,6 +89,8 @@
     <Compile Include="Models\Location\CityBLL.cs" />
     <Compile Include="Models\Location\WaterObjectBLL.cs" />
     <Compile Include="Models\Radiation\RadiationBLL.cs" />
+    <Compile Include="Models\Statistic\LevelStatisticBLL.cs" />
+    <Compile Include="Models\Statistic\RadiationStatisticBLL.cs" />
     <Compile Include="Models\Users\RoleBLL.cs" />
     <Compile Include="Models\Users\User.cs" />
     <Compile Include="Models\Water\BioOxygenBLL.cs" />
