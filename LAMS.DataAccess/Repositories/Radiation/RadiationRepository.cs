@@ -81,5 +81,41 @@ namespace Ecology.DataAccess.Repositories.Radiation
 
             return stat;
         }
+
+        public async Task<double> SmallPrediction(int id)
+        {
+            double prediction = 0;
+            IEnumerable<RadiationDb> radiations = await _context.Radiations.Where(o =>
+                o.IdCity == id
+            ).OrderByDescending(o => o.Date).ToListAsync().ConfigureAwait(false);
+
+            if (radiations.Count() == 0)
+            {
+                return prediction;
+            }
+            else
+            {
+                prediction = radiations.Take(7).Average(o => o.Dose);
+                return prediction;
+            }
+        }
+        public async Task<double> BigPrediction(int id)
+        {
+            double prediction = 0;
+            IEnumerable<RadiationDb> radiations = await _context.Radiations.Where(o =>
+                o.IdCity == id
+            ).OrderByDescending(o => o.Date).ToListAsync().ConfigureAwait(false);
+
+            if (radiations.Count() == 0)
+            {
+                return prediction;
+            }
+            else
+            {
+                prediction = radiations.Take(30).Average(o => o.Dose);
+                return prediction;
+            }
+
+        }
     }
 }

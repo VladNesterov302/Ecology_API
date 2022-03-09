@@ -17,5 +17,8 @@ namespace Ecology.Logic.Common.Services.Radiation
 
         Task<IEnumerable<LevelRadiationStatisticBLL>> GetLevelStatistic();
         Task<IEnumerable<LevelRadiationStatisticBLL>> GetCityStatistic(int id);
+
+        Task<double> SmallPrediction(int id);
+        Task<double> BigPrediction(int id);
     }
 }

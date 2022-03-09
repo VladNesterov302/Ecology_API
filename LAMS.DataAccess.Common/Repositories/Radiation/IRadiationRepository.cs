@@ -17,5 +17,8 @@ namespace Ecology.DataAccess.Common.Repositories.Radiation
 
         Task<IEnumerable<LevelRadiationStatisticDTO>> GetLevelStatistic();
         Task<IEnumerable<LevelRadiationStatisticDTO>> GetCityStatistic(int id);
+
+        Task<double> SmallPrediction(int id);
+        Task<double> BigPrediction(int id);
     }
 }

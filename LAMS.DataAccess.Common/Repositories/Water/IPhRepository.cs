@@ -16,5 +16,8 @@ namespace Ecology.DataAccess.Common.Repositories.Water
         Task<int> EditPh(PhDb ph);
         Task<IEnumerable<LevelStatisticDTO>> GetLevelStatistic();
         Task<IEnumerable<LevelStatisticDTO>> GetWaterObjectStatistic(int id);
+        Task<double> SmallPrediction(int id);
+        Task<double> BigPrediction(int id);
+
     }
 }

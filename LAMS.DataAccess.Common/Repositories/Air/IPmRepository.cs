@@ -18,5 +18,9 @@ namespace Ecology.DataAccess.Common.Repositories.Air
         Task<IEnumerable<LevelStatisticDTO>> GetLevel10Statistic();
         Task<IEnumerable<LevelStatisticDTO>> GetCityStatistic(int id);
         Task<IEnumerable<LevelStatisticDTO>> GetCity10Statistic(int id);
+        Task<double> SmallPrediction(int id);
+        Task<double> BigPrediction(int id);
+        Task<double> SmallPrediction10(int id);
+        Task<double> BigPrediction10(int id);
     }
 }

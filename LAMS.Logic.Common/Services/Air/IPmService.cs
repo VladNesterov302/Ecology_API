@@ -18,5 +18,9 @@ namespace Ecology.Logic.Common.Services.Air
         Task<IEnumerable<LevelStatisticBLL>> GetLevel10Statistic();
         Task<IEnumerable<LevelStatisticBLL>> GetCityStatistic(int id);
         Task<IEnumerable<LevelStatisticBLL>> GetCity10Statistic(int id);
+        Task<double> SmallPrediction(int id);
+        Task<double> BigPrediction10(int id);
+        Task<double> SmallPrediction10(int id);
+        Task<double> BigPrediction(int id);
     }
 }

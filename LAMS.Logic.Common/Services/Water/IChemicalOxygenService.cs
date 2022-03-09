@@ -16,5 +16,7 @@ namespace Ecology.Logic.Common.Services.Water
         Task<int> EditChemicalOxygen(ChemicalOxygenBLL chemicalOxygen);
         Task<IEnumerable<LevelStatisticBLL>> GetLevelStatistic();
         Task<IEnumerable<LevelStatisticBLL>> GetWaterObjectStatistic(int id);
+        Task<double> SmallPrediction(int id);
+        Task<double> BigPrediction(int id);
     }
 }

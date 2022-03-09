@@ -63,5 +63,13 @@ namespace Ecology.Logic.Services.Water
             return await _repo.GetWaterObjectStatistic(id)
                 .ContinueWith(t => _mapper.Map<IEnumerable<LevelStatisticBLL>>(t.Result));
         }
+        public async Task<double> SmallPrediction(int id)
+        {
+            return await _repo.SmallPrediction(_mapper.Map<int>(id)).ContinueWith(t => t.Result);
+        }
+        public async Task<double> BigPrediction(int id)
+        {
+            return await _repo.BigPrediction(_mapper.Map<int>(id)).ContinueWith(t => t.Result);
+        }
     }
 }

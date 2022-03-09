@@ -85,5 +85,21 @@ namespace Ecology.WebApi.Controllers.api.Air
 
             return Ok(levelStatistics);
         }
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("smallpredictionazot")]
+        public async Task<IHttpActionResult> SmallPrediction([FromUri] int id)
+        {
+            var dose = await _service.SmallPrediction(id);
+
+            return Ok(dose);
+        }
+        [SwaggerResponseRemoveDefaults]
+        [HttpGet, Route("bigpredictionazot")]
+        public async Task<IHttpActionResult> BigPrediction([FromUri] int id)
+        {
+            var dose = await _service.BigPrediction(id);
+
+            return Ok(dose);
+        }
     }
 }

@@ -16,5 +16,7 @@ namespace Ecology.Logic.Common.Services.Air
         Task<int> EditSera(SeraBLL sera);
         Task<IEnumerable<LevelStatisticBLL>> GetLevelStatistic();
         Task<IEnumerable<LevelStatisticBLL>> GetCityStatistic(int id);
+        Task<double> SmallPrediction(int id);
+        Task<double> BigPrediction(int id);
     }
 }

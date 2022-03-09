@@ -81,5 +81,40 @@ namespace Ecology.DataAccess.Repositories.Air
 
             return stat;
         }
+        public async Task<double> SmallPrediction(int id)
+        {
+            double prediction = 0;
+            IEnumerable<SeraDb> items = await _context.Seras.Where(o =>
+                o.IdCity == id
+            ).OrderByDescending(o => o.Date).ToListAsync().ConfigureAwait(false);
+
+            if (items.Count() == 0)
+            {
+                return prediction;
+            }
+            else
+            {
+                prediction = items.Take(7).Average(o => o.Dose);
+                return prediction;
+            }
+        }
+        public async Task<double> BigPrediction(int id)
+        {
+            double prediction = 0;
+            IEnumerable<SeraDb> items = await _context.Seras.Where(o =>
+                o.IdCity == id
+            ).OrderByDescending(o => o.Date).ToListAsync().ConfigureAwait(false);
+
+            if (items.Count() == 0)
+            {
+                return prediction;
+            }
+            else
+            {
+                prediction = items.Take(30).Average(o => o.Dose);
+                return prediction;
+            }
+
+        }
     }
 }
