@@ -59,8 +59,8 @@
     <Reference Include="Moq, Version=4.10.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.10.0\lib\net45\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
@@ -93,30 +93,29 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ErrorLog\ErrorLogUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SMTP\SMTPClientTest.cs" />
+    <Compile Include="Radiation\BaseTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LAMS.DataAccess.Common\LAMS.DataAccess.Common.csproj">
-      <Project>{1A2FE47D-4E7A-48DD-860A-610111FAAAD7}</Project>
-      <Name>LAMS.DataAccess.Common</Name>
+    <ProjectReference Include="..\LAMS.DataAccess.Common\Ecology.DataAccess.Common.csproj">
+      <Project>{1a2fe47d-4e7a-48dd-860a-610111faaad7}</Project>
+      <Name>Ecology.DataAccess.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LAMS.DataAccess\LAMS.DataAccess.csproj">
-      <Project>{7B3156CF-BB82-49C6-8145-279C90CF9555}</Project>
-      <Name>LAMS.DataAccess</Name>
+    <ProjectReference Include="..\LAMS.DataAccess\Ecology.DataAccess.csproj">
+      <Project>{7b3156cf-bb82-49c6-8145-279c90cf9555}</Project>
+      <Name>Ecology.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LAMS.Logic.Common\LAMS.Logic.Common.csproj">
-      <Project>{04AF07DD-EB92-425E-9897-7437778FE7A3}</Project>
-      <Name>LAMS.Logic.Common</Name>
+    <ProjectReference Include="..\LAMS.Logic.Common\Ecology.Logic.Common.csproj">
+      <Project>{04af07dd-eb92-425e-9897-7437778fe7a3}</Project>
+      <Name>Ecology.Logic.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LAMS.Logic\LAMS.Logic.csproj">
-      <Project>{01C37EE4-24B6-46C5-906D-E2FF09B522A8}</Project>
-      <Name>LAMS.Logic</Name>
+    <ProjectReference Include="..\LAMS.Logic\Ecology.Logic.csproj">
+      <Project>{01c37ee4-24b6-46c5-906d-e2ff09b522a8}</Project>
+      <Name>Ecology.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
